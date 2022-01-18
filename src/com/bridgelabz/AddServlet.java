@@ -8,7 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class AddServlet extends HttpServlet {
-	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException{
+	//only implements post
+	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException{
 		int i = Integer.parseInt(req.getParameter("num1"));
 		int j = Integer.parseInt(req.getParameter("num2"));
 		
