@@ -12,23 +12,21 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet("/sq")
 public class SqServlet extends HttpServlet {
-	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException{
+	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		int k = 0;
 		Cookie cookies[] = req.getCookies();
-		
-		for(Cookie c :cookies){
-			if(c.getName().equals("k"))
-				k=Integer.parseInt(c.getValue());
+
+		for (Cookie c : cookies) {
+			if (c.getName().equals("k"))
+				k = Integer.parseInt(c.getValue());
 		}
-		
-	
+
 		k = k * k;
-		
-		
+
 		PrintWriter out = res.getWriter();
-		out.println("hello sq res is" +k);
+		out.println("hello sq res is" + k);
 		System.out.println("sq called");
-		
+
 	}
 
 }
